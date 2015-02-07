@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Test!</title>
+
+	<style>
+		#video{
+			
+		}
+		#canvas{
+			position: absolute;
+			z-index: 1001;
+		}
+		button{
+			background: #EEE;
+			border: 1px solid #CCC;
+		}
+	</style>
+	
+	<script src="lib/compatibility.js"></script>
+	<script src="lib/objectdetect.js"></script>
+	<script src="lib/objectdetect.frontalface.js"></script>
+	<script src="lib/objectdetect.mouth.js"></script>
+	<script src="lib/objectdetect.eye.js"></script>
+	<script src="lib/objectdetect.smile.js"></script>
+	<script src="lib/objectdetect.frontalcatface.js"></script>
+</head>
+
+<body>
+	<canvas id="canvas"></canvas>
+	<video id="video"></video>
+	
+	<br>
+
+	<button type='button' id='clear-boxes'>Clear</button>
+	<button type='button' id='detect-face'>Detect Face</button>
+	<button type='button' id='detect-eyes'>Detect Eyes</button>
+	<button type='button' id='detect-mouth'>Detect Mouth</button>
+	<button type='button' id='detect-smile'>Detect Smile</button>
+	<button type='button' id='detect-cat'>Detect Cat</button>
+
+	<script src="test.js"></script>
+</body>
+</html>
