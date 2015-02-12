@@ -12,6 +12,7 @@
     var canvas = $('#canvas')[0];
     var context = canvas.getContext('2d');
     var detectors = {};
+    var smoother = new Smoother([0.9999999, 0.9999999, 0.999, 0.999], [0, 0, 0, 0]);
     var detectorsSetup = false;
 
     function initVideo() {
@@ -66,12 +67,16 @@
         if (myDetector) {
             // Detect things in the source
             var rects = myDetector.detect(video, 1);
+            //var rect = rects[0];
+            var rect = smoother.smooth(rects[0]);
+            console.log(rect)
+            drawBox(rect[0], rect[1], rect[2], rect[3], 2);
 
             // Draw rectangles around detected things:
-            for (var i = 0; i < rects.length; ++i) {
-                var coord = rects[i];
-                drawBox(coord[0], coord[1], coord[2], coord[3], 2);
-            }
+            //for (var i = 0; i < rects.length; ++i) {
+            //    var coord = rects[i];
+            //    drawBox(coord[0], coord[1], coord[2], coord[3], 2);
+            //}
         }
     }
 
