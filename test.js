@@ -65,12 +65,12 @@
 
         if (myDetector) {
             // Detect things in the source
-            var rects = myDetector.detect(video);
+            var rects = myDetector.detect(video, 1);
 
             // Draw rectangles around detected things:
             for (var i = 0; i < rects.length; ++i) {
                 var coord = rects[i];
-                drawBox(coord[0], coord[1], coord[2], coord[3], coord[4]);
+                drawBox(coord[0], coord[1], coord[2], coord[3], 2);
             }
         }
     }
